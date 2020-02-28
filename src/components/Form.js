@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Form, InputGroup, FormControl, Button } from 'react-bootstrap'
 import './Form.css';
+import Weather from './Weather';
+// import Weather from './Weather.js';
 
 const api = {
   key: '527236c6e428a1fc7353831ef8271f3c',
@@ -22,7 +24,6 @@ const FormInput = (props) => {
         setQuery('');
         console.log(result)
       })
-
   }
 
   const dateBuilder = (d) => {
@@ -40,15 +41,33 @@ const FormInput = (props) => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    // const citys = e.target.value;
+    setQuery(e.target.value)
+    console.log(e.target.elements.city.value)
+  }
+  const city = {
+    kyiv: 'kyiv',
+    london: 'london'
   }
 
   return (
-    <div className="wrap">
-      <main >
-        <Form className="  input-city text-center "
+    <div >
+      <Weather/>
+      <div className="citys">
+        {/* <div className="citys-item" value={query} {????????} onClick={search}>{city.kyiv}</div> */}
+        {/* <div className="citys-item" name="kyiv" value={query}  onClick={search}>{city.kyiv}</div> */}
+        {/* <div className="citys-item" name="london" value={query}  onClick={search}>{city.london}</div> */}
+        <div className="citys-item" onClick={search}>Moscow</div>
+        <div className="citys-item" onClick={search}>Marmaris</div>             
+        <div className="citys-item" onClick={search}>Hawai</div>
+      </div>
+
+      <div>
+      <main className="wrap d-flex justify-content-center w-100">
+        
+        <Form className=" input-city  "
           onSubmit={FormInput} >
-          <InputGroup className=" mb-3">
+          <InputGroup className=" ">
             <FormControl className="search-box"
               type="text"
               onChange={e => setQuery(e.target.value)}
@@ -64,7 +83,7 @@ const FormInput = (props) => {
           </InputGroup>
 
           {(typeof weather.main != "undefined") ? (
-            <div>
+            <div className="info-box">
               <div className="location-box">
                 <div className="location">{weather.name}, {weather.sys.country} </div>
                 <div className="date">{dateBuilder(new Date())}</div>
@@ -78,6 +97,7 @@ const FormInput = (props) => {
 
         </Form >
       </main>
+      </div>
     </div>
 
   )

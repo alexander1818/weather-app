@@ -1,31 +1,33 @@
-.main {
-  display: flex;
-  justify-content: center;
-} 
-/* .wrap {
-  background-image: url("https://hdfreewallpapers.net/wp-content/uploads/2018/07/sea_palm_trees_coast_stones_boulders_tropics_45933_1920x1080.jpg");
-  background-position: cover;
-} */
+
 .input-city {
-  
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  width: 400px;
+  position: absolute;
+  top: 70px;
+  text-align: center;
+  background: transparent;
+  margin: 0 auto;
+  padding: 0; 
   color: #fff;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.75) );
   border-radius:5px;
   outline: none;
-  /* color: #313131;
-  font-size: 20px; */
+}
+.search-box {
+  background: transparent;
+  background-color: rgba(255,255,255,0.5);
+}
+.info-box {
+  margin-top: 35px;
+  padding: 0;
+  /* background: linear-gradient(to top, rgba(0,0,0,0.0), rgba(0,0,0,0.75) ); */
+  /* font-size: 20px;  */
   transition: 1s ease-out;
-
 }
 
 .location-box .location {
-  font-size: 32px;
+  font-size: 42px;
   font-family: sans-serif;
   font-weight: 900;
-  text-shadow: 3px 3px rgba(50,50,70,0.5);
+  text-shadow: 3px 3px rgba(50,50,70,0.7);
   transition: 1s ease-out;
 }
 .location-box {
@@ -33,7 +35,10 @@
   font-size: 20px;
   font-weight: 500;
   font-family: italic;
+  /* background-color: rgba(255,255,255, 0.2);
+  border-radius: 16px; */
   text-shadow: 2px 2px rgba(50,50,70,0.5);
+  /* box-shadow: 3px 3px rgba(0,0,0,0.2); */
 }
 
 .weather-box .temp {
@@ -52,25 +57,27 @@
 .weather-box .weather {
   font-size: 32px;
   font-weight: 700;
-  text-shadow: 3px 3px rgba(0,0,0,0.2);
+  text-shadow: 3px 3px rgba(0,0,0,0.5);
 }
 .date {
-  font-size: 16px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 17px;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   transition: 1s ease-out;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
-  /* font-family: serif ; */
-
-
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-main {
-  border-radius: 15px;
-  /* min-height: 30px; */
-  
+.citys {
+  position: relative;
+  display: block;
+  width: 120px;
+  color: #fff;
+  font-size: 20px;
+  font-family: sans-serif;
+  margin-top: 55px;
 }
 
-.search-box {
-  background: transparent;
-  /* background-color: rgba(255,255,255,0.5); */
+.citys-item {
+  cursor: pointer;
 }
+
+

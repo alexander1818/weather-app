@@ -71,14 +71,12 @@ const AuthForm = (props) => {
         setPassword(e.target.value);
     }
 
-
-
     return (
-        <div className=" wrap w-100">
-            <div className={massage && 'app  wraper'}>
-                <h1>{isSignUp ? 'Sign up' : 'Login'}</h1>
+        <div className=" wrap   w-100">
+            <div className={massage && 'app   wraper'} >
 
                 <Form onSubmit={handleSubmit}>
+                    <h1>{isSignUp ? 'Sign up' : 'Login'}</h1>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control value={email}
@@ -97,12 +95,12 @@ const AuthForm = (props) => {
 
                     <Button variant="primary" type="submit">Submit</Button>
                     {/* {isSignUp ? 'Sign up' : 'Login'} */}
+                    {isSignUp && <p>If you allready have a password <Button className="btn-link" variant="link" onClick={setSignUpFalse}>Click Here</Button> </p>}
+                    {!isSignUp && <p>If you want registration  <Button className="btn-link" variant="link" onClick={setSignUpTrue}>Sign Up</Button> </p>}
+
                 </Form>
 
-                {isSignUp && <p>If you want registration  <Button variant="link" onClick={setSignUpFalse}>Click</Button> </p>}
-                {!isSignUp && <p>If you allready have a password  <Button variant="link" onClick={setSignUpTrue}>Sign Up</Button> </p>}
-
-                {/* {massage && } */}
+                {/* {massage && <FormInput />}} */}
                 {/* {massage && <Tost />} */}
 
             </div >
@@ -110,6 +108,8 @@ const AuthForm = (props) => {
                 <Router>
                     <Switch>
                         <Route exact path="/" component={FormInput} />
+                        <Route  path="/" component={Weather} />
+
                     </Switch>
                 </Router>
             }
