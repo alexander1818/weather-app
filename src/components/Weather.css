@@ -1,9 +1,14 @@
- .header {
+ /* .header {
    position: absolute;
    top: 0;
    width: 100%;
    display: flex;
-   justify-content: space-between;
-   align-items: flex-start;
+   justify-content: space-around;
 
  }
+ .city {
+   display: block;
+   margin-top: 20px;
+   position: relative;
+   opacity: 0.8;
+ } */

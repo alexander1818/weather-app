@@ -1,6 +1,7 @@
 
 .input-city {
   width: 400px;
+  
   position: absolute;
   top: 70px;
   text-align: center;
@@ -12,6 +13,7 @@
   outline: none;
 }
 .search-box {
+  
   background: transparent;
   background-color: rgba(255,255,255,0.5);
 }
@@ -55,9 +57,15 @@
 }
 
 .weather-box .weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 32px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(0,0,0,0.5);
+  width: 150px;
+  margin: 0 auto;
+  z-index: 0;
 }
 .date {
   font-size: 17px;
@@ -73,11 +81,22 @@
   color: #fff;
   font-size: 20px;
   font-family: sans-serif;
-  margin-top: 55px;
+  margin-top: 80px;
 }
 
 .citys-item {
   cursor: pointer;
+  z-index: 10;
+}
+
+.remove-city {
+  margin: 10px;
+  padding: 0 4px 2px  4px;
+  border-radius: 5px;
+  border: 1px solid red;
+  font-weight: 900;
+  text-align: right;
+  
 }
 
 

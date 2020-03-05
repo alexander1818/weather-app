@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../components/Weather.css'
+import { BrowserRouter as Router, Switch, Route, Link  }from 'react-router-dom'
+
 const Weather = (props) => {
-  // console.log(props)
+
   return (
-    <div className="header">
-      <span>Menu</span>
-      <span>Favorite</span>
-    </div>
+    <Router>
+      <div className="">
+       
+      </div>
+    </Router>
   )
 }
 export default Weather;

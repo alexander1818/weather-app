@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import Tost from '../components/Toest';
-import FormInput from '../components/Form';
+import FormInput from './FormInput';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Weather from './Weather';
 import '../components/AuthForm.css';
-// import { Link } from 'react-router-dom';
 
 const AuthForm = (props) => {
     const [isSignUp, setSignUp] = useState(true);
@@ -72,7 +69,7 @@ const AuthForm = (props) => {
     }
 
     return (
-        <div className=" wrap   w-100">
+        <div className=" wrap w-100 ">
             <div className={massage && 'app   wraper'} >
 
                 <Form onSubmit={handleSubmit}>
@@ -100,7 +97,7 @@ const AuthForm = (props) => {
 
                 </Form>
 
-                {/* {massage && <FormInput />}} */}
+                {/* {massage && <FormInput />} */}
                 {/* {massage && <Tost />} */}
 
             </div >
@@ -108,8 +105,6 @@ const AuthForm = (props) => {
                 <Router>
                     <Switch>
                         <Route exact path="/" component={FormInput} />
-                        <Route  path="/" component={Weather} />
-
                     </Switch>
                 </Router>
             }
