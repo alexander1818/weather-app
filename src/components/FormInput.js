@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, InputGroup, FormControl, Button, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { Form, InputGroup, FormControl, Button } from 'react-bootstrap'
 import './Form.css';
 import Navigation from './Navigation';
 import AddCity from '../pages/AddCity';
@@ -15,10 +15,6 @@ const FormInput = (props) => {
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState([]);
 
-  // const handleNewCityChange = (e) => {
-  //   e.preventDefault();
-  //   setQuery(e.target.value)
-  // }
 
   const handleNewCity = (e) => {
     e.preventDefault();
@@ -68,7 +64,9 @@ const FormInput = (props) => {
   const removeCity = (id) => {
     setCity(city.filter((town) => town.id != id))
   }
+
   console.log('-----', city)
+
   return (
     <div >
       <AddCity town={city} />
@@ -93,49 +91,45 @@ const FormInput = (props) => {
         </div>
       </div>
 
-      <div>
+      <main className="wrap d-flex justify-content-center w-100">
 
-        <main className="wrap d-flex justify-content-center w-100">
+        <Form className=" input-city  "
+          onSubmit={handleNewCity}
+        >
+          <InputGroup className=" ">
+            <FormControl className="search-box"
+              type="text"
+              onChange={e => setQuery(e.target.value)}
+              value={query}
+              placeholder="Search..."
+              aria-describedby="basic-addon2"
+              name="city"
+            />
 
-          <Form className=" input-city  "
-            onSubmit={handleNewCity}
-          >
-            <InputGroup className=" ">
-              <FormControl className="search-box"
-                type="text"
-                onChange={e => setQuery(e.target.value)}
-                value={query}
-                placeholder="Search..."
-                aria-describedby="basic-addon2"
-                name="city"
-              />
+            <InputGroup.Append >
+              <Button variant="primary" type="submit" onClick={search(query)}> Получить погоду</Button>
+            </InputGroup.Append>
 
-              <InputGroup.Append >
-                <Button variant="primary" type="submit" onClick={search(query)}> Получить погоду</Button>
-              </InputGroup.Append>
-              <InputGroup.Append >
-                <Button className="bg-warning" variant="primary" type="submit" onClick={handleNewCity}> Add</Button>
+            <InputGroup.Append >
+              <Button className="bg-warning" variant="primary" type="submit" onClick={handleNewCity}> Add</Button>
+            </InputGroup.Append>
+          </InputGroup>
 
-              </InputGroup.Append>
-            </InputGroup>
-
-            {(typeof weather.main != "undefined") ? (
-              <div className="info-box">
-                <div className="location-box">
-                  <div className="location">{weather.name}, {weather.sys.country} </div>
-                  <div className="date">{dateBuilder(new Date())}</div>
-                </div>
-                <div className="weather-box">
-                  <div className="temp">{Math.round(weather.main.temp)}&#176;C</div>
-                  <div className="weather">{weather.weather[0].main}</div>
-                </div>
+          {(typeof weather.main != "undefined") ? (
+            <div className="info-box">
+              <div className="location-box">
+                <div className="location">{weather.name}, {weather.sys.country} </div>
+                <div className="date">{dateBuilder(new Date())}</div>
               </div>
-            ) : ('')}
+              <div className="weather-box">
+                <div className="temp">{Math.round(weather.main.temp)}&#176;C</div>
+                <div className="weather">{weather.weather[0].main}</div>
+              </div>
+            </div>
+          ) : ('')}
 
-          </Form >
-        </main>
-
-      </div>
+        </Form >
+      </main>
 
       <Navigation />
 

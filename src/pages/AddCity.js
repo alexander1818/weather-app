@@ -9,8 +9,8 @@ const AddCity = (props) => {
     return (
         <div className="header">
             {add.map((el) => (
-                <div className="city" key={el.text}>{el.text }</div>
-            ))} 
+                <div className="city" key={el.text}>{el.text}</div>
+            ))}
         </div>
     )
 }

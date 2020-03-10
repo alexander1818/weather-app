@@ -2,9 +2,9 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import AuthForm from '../components/AuthForm';
 import '../pages/Auth.css'
+import FormInput from '../components/FormInput'
 
 const Auth = props => {
-
     return (
         <Container className="container vh-100 ">
             <Row className="d-flex justify-content-center    vh-100  ">
@@ -12,7 +12,7 @@ const Auth = props => {
                     <AuthForm />
                 </Col>
             </Row>
-        </Container>
+        </Container >
     )
 }
 
